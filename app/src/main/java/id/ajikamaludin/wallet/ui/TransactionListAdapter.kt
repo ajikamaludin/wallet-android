@@ -35,9 +35,10 @@ class TransactionListAdapter(private val onItemClicked: (Transaction) -> Unit):
 
         fun bind(transaction: Transaction) {
             binding.apply {
+                val amount = transaction.amount.toString()
                 when(transaction.type) {
-                    ITEM_INCOME -> textAmount.text = transaction.amount.toString()
-                    else -> textAmount.text = "-${transaction.amount.toString()}"
+                    ITEM_INCOME -> textAmount.text = amount
+                    else -> textAmount.text = "-${amount}"
                 }
                 textDate.text = transaction.createdAt
                 textDescription.text = transaction.description

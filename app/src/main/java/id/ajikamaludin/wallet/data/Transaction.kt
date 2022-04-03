@@ -9,7 +9,7 @@ data class Transaction(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     @ColumnInfo(name = "amount")
-    val amount: Double,
+    val amount: Int,
     @ColumnInfo(name = "description")
     val description: String,
     @ColumnInfo(name = "type")

@@ -6,9 +6,6 @@
 
     <data>
 
-        <variable
-            name="viewModel"
-            type="id.ajikamaludin.wallet.ui.TransactionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,26 +49,23 @@
                     style="@style/TextAppearance.MaterialComponents.Headline6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.amount}"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    tools:text="10.000" />
+                    tools:text="1000000000" />
             </LinearLayout>
 
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_expense"
+            android:id="@+id/card_income"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="@android:color/holo_red_light"
-            app:layout_constraintEnd_toStartOf="@+id/card_income"
+            app:layout_constraintEnd_toStartOf="@+id/card_expense"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_balance">
 
@@ -96,26 +90,24 @@
                     style="@style/TextAppearance.MaterialComponents.Headline6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.expense}"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    tools:text="10.000" />
+                    tools:text="10000" />
             </LinearLayout>
 
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_income"
+            android:id="@+id/card_expense"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="@android:color/holo_green_light"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/card_expense"
+            app:layout_constraintStart_toEndOf="@+id/card_income"
             app:layout_constraintTop_toBottomOf="@+id/card_balance">
 
             <LinearLayout
@@ -139,10 +131,9 @@
                     style="@style/TextAppearance.MaterialComponents.Headline6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.income}"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    tools:text="20.000" />
+                    tools:text="20000" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>

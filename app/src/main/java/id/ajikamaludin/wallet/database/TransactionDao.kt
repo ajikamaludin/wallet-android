@@ -18,14 +18,14 @@ interface TransactionDao {
     @Query("SELECT * from transactions ORDER BY created_at DESC")
     fun getTransactions(): Flow<List<Transaction>>
 
-    @Query("SELECT (SELECT SUM(amount) FROM transactions WHERE type = ${ITEM_INCOME}) - (SELECT SUM(amount) FROM transactions WHERE type = ${ITEM_EXPENSE})")
-    fun getTotalAmount(): Flow<String>
+    @Query("SELECT (SELECT COALESCE(SUM(amount), 0) FROM transactions WHERE type = ${ITEM_INCOME}) - (SELECT COALESCE(SUM(amount), 0) FROM transactions WHERE type = ${ITEM_EXPENSE})")
+    fun getTotalAmount(): Flow<Int>
 
-    @Query("SELECT SUM(amount) FROM transactions WHERE type = $ITEM_INCOME")
-    fun getTotalIncome(): Flow<String>
+    @Query("SELECT COALESCE(SUM(amount), 0) FROM transactions WHERE type = $ITEM_INCOME")
+    fun getTotalIncome(): Flow<Int>
 
-    @Query("SELECT SUM(amount) FROM transactions WHERE type = $ITEM_EXPENSE")
-    fun getTotalExpense(): Flow<String>
+    @Query("SELECT COALESCE(SUM(amount), 0) FROM transactions WHERE type = $ITEM_EXPENSE")
+    fun getTotalExpense(): Flow<Int>
 
     @Query("SELECT * FROM transactions WHERE id = :id")
     fun getTransaction(id: Long): Flow<Transaction>

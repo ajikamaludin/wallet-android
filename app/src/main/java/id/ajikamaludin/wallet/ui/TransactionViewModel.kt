@@ -9,9 +9,9 @@ import java.util.*
 
 class TransactionViewModel(private val transactionDao: TransactionDao): ViewModel() {
     val transactions: LiveData<List<Transaction>> = transactionDao.getTransactions().asLiveData()
-    val amount: LiveData<String> = transactionDao.getTotalAmount().asLiveData()
-    val expense: LiveData<String> = transactionDao.getTotalExpense().asLiveData()
-    val income: LiveData<String> = transactionDao.getTotalIncome().asLiveData()
+    val amount: LiveData<Int> = transactionDao.getTotalAmount().asLiveData()
+    val expense: LiveData<Int> = transactionDao.getTotalExpense().asLiveData()
+    val income: LiveData<Int> = transactionDao.getTotalIncome().asLiveData()
 
     private fun insertTransaction(transaction: Transaction) {
         viewModelScope.launch {
@@ -22,11 +22,11 @@ class TransactionViewModel(private val transactionDao: TransactionDao): ViewMode
     private fun getNewTransactionEntry(amount: String, description: String, type: Int): Transaction {
         val current = Date()
 
-        val formatter = SimpleDateFormat("dd-M-yyyy hh:mm", Locale.US)
+        val formatter = SimpleDateFormat("dd-M-yyyy HH:mm", Locale.US)
         val formatted = formatter.format(current)
 
         return Transaction(
-            amount = amount.toDouble(),
+            amount = amount.toInt(),
             description = description,
             type = type,
             createdAt = formatted
@@ -52,7 +52,7 @@ class TransactionViewModel(private val transactionDao: TransactionDao): ViewMode
     private fun getUpdatedTransactionEntry(id: Long, amount: String, description: String, type: Int, createdAt: String): Transaction {
         return Transaction(
             id = id,
-            amount = amount.toDouble(),
+            amount = amount.toInt(),
             description = description,
             type = type,
             createdAt = createdAt

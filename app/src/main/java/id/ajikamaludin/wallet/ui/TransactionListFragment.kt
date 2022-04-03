@@ -37,9 +37,6 @@ class TransactionListFragment: Fragment() {
             findNavController().navigate(action)
         }
 
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = viewLifecycleOwner
-
         val adapter = TransactionListAdapter {
             val action = TransactionListFragmentDirections.actionTransactionListFragmentToAddTransactionFragment(it.id)
             findNavController().navigate(action)
@@ -48,6 +45,18 @@ class TransactionListFragment: Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         viewModel.transactions.observe(viewLifecycleOwner) { items ->
             items.let { adapter.submitList(it) }
+        }
+
+        viewModel.amount.observe(viewLifecycleOwner) { amount ->
+            binding.txtAmount.text = amount.toString()
+        }
+
+        viewModel.income.observe(viewLifecycleOwner) {
+            binding.txtExpense.text = it.toString()
+        }
+
+        viewModel.expense.observe(viewLifecycleOwner) {
+            binding.txtIncome.text = it.toString()
         }
     }
 }

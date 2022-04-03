@@ -10,4 +10,8 @@
     <string name="amount">Jumlah</string>
     <string name="description">Deskripsi</string>
     <string name="type">Tipe</string>
+    <string name="delete_action">Hapus</string>
+    <string name="delete_question">Anda yakin ?</string>
+    <string name="no">tidak</string>
+    <string name="yes">Ya</string>
 </resources>

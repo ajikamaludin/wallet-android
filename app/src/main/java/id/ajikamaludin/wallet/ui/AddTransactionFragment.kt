@@ -113,11 +113,11 @@ class AddTransactionFragment : Fragment() {
 
     private fun bind(transaction: Transaction) {
         binding.apply {
-            itemAmount.setText(transaction.amount.toString(), TextView.BufferType.SPANNABLE)
+            itemAmount.setText(transaction.amount.toInt().toString(), TextView.BufferType.SPANNABLE)
             itemDescription.setText(transaction.description, TextView.BufferType.SPANNABLE)
             when(transaction.type) {
-                ITEM_INCOME -> itemType.setText(getString(R.string.income), TextView.BufferType.SPANNABLE)
-                else -> itemType.setText(getString(R.string.expense), TextView.BufferType.SPANNABLE)
+                ITEM_INCOME -> itemType.setText(getString(R.string.income), false)
+                else -> itemType.setText(getString(R.string.expense), false)
             }
 
             saveAction.setOnClickListener { updateItem() }
