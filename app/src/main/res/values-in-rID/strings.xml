@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wallet</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_transaction">Buat Transaksi</string>
+    <string name="balance">Saldo</string>
+    <string name="income">Pengeluaran</string>
+    <string name="expense">Pemasukan</string>
+    <string name="save_action">Simpan</string>
+    <string name="amount">Jumlah</string>
+    <string name="description">Deskripsi</string>
+    <string name="type">Tipe</string>
+</resources>

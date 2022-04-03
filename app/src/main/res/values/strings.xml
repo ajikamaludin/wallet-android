@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Wallet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_transaction">Create Transaction</string>
+    <string name="balance">Balance</string>
+    <string name="income">Expense</string>
+    <string name="expense">Income</string>
+    <string name="save_action">Save</string>
+    <string name="amount">Amount</string>
+    <string name="description">Description</string>
+    <string name="type">Type</string>
+</resources>

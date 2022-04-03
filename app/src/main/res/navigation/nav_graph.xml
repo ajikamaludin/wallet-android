@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/transactionListFragment">
+
+    <fragment
+        android:id="@+id/transactionListFragment"
+        android:name="id.ajikamaludin.wallet.ui.TransactionListFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_transactionListFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="id.ajikamaludin.wallet.ui.AddTransactionFragment"
+        android:label="Transaction"
+        tools:layout="@layout/fragment_add_transaction" >
+        <action
+            android:id="@+id/action_addTransactionFragment_to_transactionListFragment"
+            app:destination="@id/transactionListFragment"
+            app:popUpTo="@id/transactionListFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+</navigation>
