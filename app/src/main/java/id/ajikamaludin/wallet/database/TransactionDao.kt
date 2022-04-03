@@ -1,6 +1,5 @@
 package id.ajikamaludin.wallet.database
 
-import android.content.ClipData
 import androidx.room.*
 import id.ajikamaludin.wallet.ITEM_EXPENSE
 import id.ajikamaludin.wallet.ITEM_INCOME
@@ -27,5 +26,8 @@ interface TransactionDao {
 
     @Query("SELECT SUM(amount) FROM transactions WHERE type = $ITEM_EXPENSE")
     fun getTotalExpense(): Flow<String>
+
+    @Query("SELECT * FROM transactions WHERE id = :id")
+    fun getTransaction(id: Long): Flow<Transaction>
 
 }

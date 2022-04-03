@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import id.ajikamaludin.wallet.R
 import id.ajikamaludin.wallet.WalletApplication
-import id.ajikamaludin.wallet.database.TransactionDao
 import id.ajikamaludin.wallet.databinding.FragmentTransactionListBinding
 
 class TransactionListFragment: Fragment() {

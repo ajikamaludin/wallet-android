@@ -14,4 +14,7 @@
         <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
         </item>
     </style>
+    <style name="Button.Red" parent="ThemeOverlay.AppCompat">
+        <item name="colorPrimary">@color/red_700</item>
+    </style>
 </resources>
